@@ -1,0 +1,2 @@
+# Desktop app (floorplan3d_app) - installed on top of requirements.txt
+PySide6>=6.6

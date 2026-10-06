@@ -38,6 +38,37 @@ machine with no internet at all, run `python make_offline_bundle.py --platform w
 `macosx_11_0_arm64` / `manylinux2014_x86_64`) on any online PC. Then copy the folder, including the new
 `wheels/` folder, to the offline machine and run the installer.
 
+### Desktop app
+A desktop app (PySide6 / Qt) is installed by the same installers and runs on Windows, macOS and Linux.
+```
+run_app_windows.bat              (Windows)
+./run_app_mac_linux.sh           (macOS / Linux)
+python -m floorplan3d_app        (any OS, from the activated .venv)
+```
+Drop a plan image on the window or click to browse. Check the settings and click **Analyse plan**.
+The 2D detection image appears first. Use the **Output** drop-down to switch to the other views:
+
+| Output | Shows |
+|---|---|
+| 2D Detection | Walls, doors, windows and coloured rooms with sizes (zoom with the wheel, drag to pan) |
+| 3D Model · Interactive | The three.js viewer, embedded (drag to orbit, scroll to zoom) |
+| 3D Model · Preview image | Still render of the 3D model |
+| Rooms & Measurements / Walls / Doors & Windows | Sortable tables, exportable as CSV |
+| Scale & Recognised Text | How the scale was found and every string the OCR read |
+| 3D Data (JSON) | The full `floorplan3d/v1` JSON |
+| Original Input | The image as loaded |
+
+Settings in the sidebar:
+* **Scale**: *Automatic* reads dimension lines. If the plan only has room-size labels, choose
+  *Pixels per foot* (or *per metre*) and enter the pixel width of a known wall divided by its length.
+  The app shows a warning when the scale had to be estimated.
+* **Trim border**: crops frames and title blocks, which would otherwise be detected as walls.
+* **Wall height**, **Read text** and **Fast mode** do the same as the command-line options below.
+
+The toolbar buttons open the current output in its default app, save it elsewhere (3D: GLB, OBJ or
+HTML), and open the output folder. If the embedded 3D viewer can't start (some Linux desktops lack
+the libraries QtWebEngine needs), the app offers to open the viewer in the web browser instead.
+
 ### Options
 ```
 python -m floorplan3d plan.png -o out           # default

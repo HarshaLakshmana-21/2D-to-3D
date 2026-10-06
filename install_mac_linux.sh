@@ -5,9 +5,9 @@ set -e
 cd "$(dirname "$0")"
 python3 -m venv .venv
 if [ -d wheels ]; then
-  .venv/bin/python -m pip install --no-index --find-links wheels -r requirements.txt
+  .venv/bin/python -m pip install --no-index --find-links wheels -r requirements.txt -r requirements-app.txt
 else
   .venv/bin/python -m pip install --upgrade pip
-  .venv/bin/python -m pip install -r requirements.txt
+  .venv/bin/python -m pip install -r requirements.txt -r requirements-app.txt
 fi
-echo "Setup complete. Run: ./run_mac_linux.sh sample_plan.png"
+echo "Setup complete. Desktop app: ./run_app_mac_linux.sh   Command line: ./run_mac_linux.sh sample_plan.png"
