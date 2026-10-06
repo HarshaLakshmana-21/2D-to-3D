@@ -4,6 +4,7 @@ import html
 import json
 import os
 import shutil
+import sys
 import time
 
 from PySide6.QtCore import QSettings, QSize, Qt, QThread, QTimer, QUrl
@@ -19,8 +20,13 @@ from .theme import C, app_icon, icon
 from .widgets import Banner, DropZone, ImageView, StatCard, is_image
 from .worker import AnalysisWorker, Job
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FROZEN = getattr(sys, "frozen", False)  # running as a PyInstaller-built executable
+# bundled read-only files live in sys._MEIPASS when frozen, else in the project folder
+PROJECT_DIR = getattr(sys, "_MEIPASS", None) or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SAMPLE = os.path.join(PROJECT_DIR, "sample_plan.png")
+# the executable's folder may be read-only (Program Files, /Applications), so default to Documents
+DEFAULT_OUT = (os.path.join(os.path.expanduser("~"), "Documents", "Floorplan3D Output") if FROZEN
+               else os.path.join(PROJECT_DIR, "output"))
 FT = 0.3048
 
 # key, label shown in the output selector, page kind
@@ -303,7 +309,7 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------ settings
     def _load_settings(self):
         s = self.settings
-        self.out_dir = s.value("out_dir", os.path.join(PROJECT_DIR, "output"))
+        self.out_dir = s.value("out_dir", DEFAULT_OUT)
         self.scale_mode.setCurrentIndex(int(s.value("scale_mode", 0)))
         self.scale_val.setValue(float(s.value("scale_val", 31.0)))
         self.wall_h.setValue(float(s.value("wall_h", 2.75)))

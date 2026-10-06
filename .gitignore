@@ -8,3 +8,8 @@ wheels/
 
 # failed first run (wrong scale, border not cropped) - see docs/pipeline_walkthrough.html
 output/draw-2d-house-plan-floor-plan-in-autocad_*
+
+# executable builds (packaging/)
+build/
+dist/
+packaging/build_icons/

@@ -69,6 +69,31 @@ The toolbar buttons open the current output in its default app, save it elsewher
 HTML), and open the output folder. If the embedded 3D viewer can't start (some Linux desktops lack
 the libraries QtWebEngine needs), the app offers to open the viewer in the web browser instead.
 
+### Desktop app as a double-click executable
+PyInstaller packs the app, Python and all models into one folder that runs without installing
+anything. A build only runs on the OS it was built on, so each OS is built separately:
+
+| OS | Build command (after the installer above) | Result |
+|---|---|---|
+| Windows | `packaging\build_windows.bat` | `dist\Floorplan3D\Floorplan3D.exe` + `dist\Floorplan3D-windows-x64.zip` |
+| macOS | `./packaging/build_mac_linux.sh` | `dist/Floorplan3D.app` + `dist/Floorplan3D-macos-<arch>.zip` |
+| Linux | `./packaging/build_mac_linux.sh` | `dist/Floorplan3D/Floorplan3D` + `dist/Floorplan3D-linux-x64.tar.gz` |
+
+To build all three without owning each OS, use the **Build desktop app** GitHub Actions workflow
+(`.github/workflows/build-desktop.yml`). Start it from the Actions tab, or push a tag such as `v0.1.0`
+to attach the three downloads to a GitHub Release. Each build runs `Floorplan3D --self-test report.json`,
+which analyses the bundled sample plan, and the build fails if that check fails.
+
+Notes for people receiving a build:
+* **Windows:** unzip, then double-click `Floorplan3D.exe`. Keep the `_internal` folder next to it.
+  SmartScreen may warn about an unknown publisher (the exe is not code-signed): click *More info → Run anyway*.
+* **macOS:** unzip and move `Floorplan3D.app` to Applications. The app is not signed or notarised, so on the
+  first launch right-click it and choose *Open*, or run `xattr -dr com.apple.quarantine /Applications/Floorplan3D.app`.
+  Signing and notarising need an Apple Developer account.
+* **Linux:** extract, then run `Floorplan3D/Floorplan3D`. For a menu entry, edit the paths in
+  `floorplan3d.desktop` and copy it to `~/.local/share/applications/`.
+* Results are saved to `Documents/Floorplan3D Output` by default (changeable in the app).
+
 ### Options
 ```
 python -m floorplan3d plan.png -o out           # default
