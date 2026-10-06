@@ -17,7 +17,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QCheckBox, QComboBox, QDoubleS
 from floorplan3d.visualize import ROOM_COLORS
 
 from .theme import C, app_icon, icon
-from .widgets import Banner, DropZone, ImageView, StatCard, is_image
+from .widgets import Banner, DropZone, ElidedLabel, ImageView, StatCard, StatsRow, is_image
 from .worker import AnalysisWorker, Job
 
 FROZEN = getattr(sys, "frozen", False)  # running as a PyInstaller-built executable
@@ -92,6 +92,7 @@ class MainWindow(QMainWindow):
         outer = QVBoxLayout(side); outer.setContentsMargins(0, 0, 0, 0); outer.setSpacing(0)
 
         scroll = QScrollArea(); scroll.setWidgetResizable(True); scroll.setFrameShape(QFrame.NoFrame)
+        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # content always fits the sidebar width
         scroll.setStyleSheet("QScrollArea, QScrollArea > QWidget > QWidget { background: transparent; }")
         body = QWidget(); v = QVBoxLayout(body); v.setContentsMargins(20, 20, 20, 12); v.setSpacing(10)
 
@@ -144,8 +145,7 @@ class MainWindow(QMainWindow):
         v.addSpacing(6)
         v.addWidget(self._section("OUTPUT FOLDER"))
         row = QHBoxLayout(); row.setSpacing(6)
-        self.out_label = QLabel(); self.out_label.setObjectName("muted")
-        self.out_label.setMinimumWidth(10)
+        self.out_label = ElidedLabel(); self.out_label.setObjectName("muted")
         change = QPushButton("Change"); change.setObjectName("link"); change.setCursor(Qt.PointingHandCursor)
         change.clicked.connect(self.choose_out_dir)
         row.addWidget(self.out_label, 1); row.addWidget(change)
@@ -176,8 +176,8 @@ class MainWindow(QMainWindow):
 
         top = QHBoxLayout(); top.setSpacing(10)
         titles = QVBoxLayout(); titles.setSpacing(2)
-        self.title = QLabel("No plan loaded"); self.title.setObjectName("title")
-        self.subtitle = QLabel("Load an image to begin"); self.subtitle.setObjectName("muted")
+        self.title = ElidedLabel("No plan loaded", Qt.ElideRight); self.title.setObjectName("title")
+        self.subtitle = ElidedLabel("Load an image to begin", Qt.ElideRight); self.subtitle.setObjectName("muted")
         titles.addWidget(self.title); titles.addWidget(self.subtitle)
         top.addLayout(titles, 1)
 
@@ -198,13 +198,10 @@ class MainWindow(QMainWindow):
         self.banner = Banner()
         v.addWidget(self.banner)
 
-        self.stats_row = QWidget()
-        sr = QHBoxLayout(self.stats_row); sr.setContentsMargins(0, 0, 0, 0); sr.setSpacing(10)
         self.stats = {k: StatCard(lbl) for k, lbl in [("rooms", "Rooms"), ("walls", "Walls"), ("doors", "Doors"),
                                                       ("windows", "Windows"), ("area", "Floor area"),
                                                       ("footprint", "Footprint"), ("scale", "Scale")]}
-        for c in self.stats.values():
-            sr.addWidget(c, 1)
+        self.stats_row = StatsRow(self.stats.values())
         self.stats_row.hide()
         v.addWidget(self.stats_row)
 
@@ -326,9 +323,7 @@ class MainWindow(QMainWindow):
             s.setValue(k, v)
 
     def _show_out_dir(self):
-        fm = self.out_label.fontMetrics()
-        self.out_label.setText(fm.elidedText(self.out_dir, Qt.ElideMiddle, 220))
-        self.out_label.setToolTip(self.out_dir)
+        self.out_label.setText(self.out_dir)
 
     def choose_out_dir(self):
         d = QFileDialog.getExistingDirectory(self, "Choose output folder", self.out_dir)
@@ -461,13 +456,13 @@ class MainWindow(QMainWindow):
         method = {"user_supplied": "set manually", "dimension_annotations": "from dimension lines"}.get(sc["method"], "estimated – verify")
         self.stats["scale"].set(f"{sc['px_per_ft_x']:.2f} px/ft", method, C["warn"] if est else None)
         self.stats_row.show()
+        self.stats_row._cols = None; self.stats_row.relayout()
         warn = d.get("warning", "")
         if est:
             warn = ("The scale was estimated because the plan has no readable dimension lines, so sizes may be wrong. "
                     "Set the scale manually in Settings (pixels ÷ feet of a known wall) and analyse again.")
         self.banner.show_text(warn)
         self.subtitle.setText(f"Analysed in {took:.0f} s · files saved to the “{os.path.basename(self.out_dir)}” folder")
-        self.subtitle.setToolTip(self.out_dir)
         self.status.setText(f"Done in {took:.1f} s · {os.path.basename(result['outputs']['json_3d'])} and 3D files written")
         self._sync_controls()
         if self.view_select.currentIndex() == 0:
