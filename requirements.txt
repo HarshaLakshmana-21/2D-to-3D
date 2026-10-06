@@ -1,0 +1,8 @@
+numpy>=1.23
+opencv-python-headless>=4.7
+onnxruntime>=1.16
+rapidocr_onnxruntime>=1.2.3
+shapely>=2.0
+trimesh>=4.0
+pillow>=9.0
+matplotlib>=3.6

@@ -1,0 +1,39 @@
+{
+  "images": 60,
+  "seconds_per_image": 12.14,
+  "pixel_iou": {
+    "bg": 0.878,
+    "wall": 0.913,
+    "door": 0.776,
+    "window": 0.826,
+    "living": 0.546,
+    "kitchen": 0.568,
+    "bedroom": 0.752,
+    "bathroom": 0.842,
+    "balcony": 0.839,
+    "storage": 0.0,
+    "stair": 0.0
+  },
+  "mIoU": 0.631,
+  "scale_calibration": {
+    "n": 43,
+    "median_abs_err_pct": 0.41,
+    "p90_abs_err_pct": 0.92
+  },
+  "rooms": {
+    "recall_iou50": 0.778,
+    "area_median_abs_err_pct": 5.45,
+    "area_p90_abs_err_pct": 34.93,
+    "type_accuracy": 0.919
+  },
+  "openings": {
+    "door": {
+      "recall": 0.944,
+      "width_median_abs_err_pct": 2.68
+    },
+    "window": {
+      "recall": 0.921,
+      "width_median_abs_err_pct": 1.43
+    }
+  }
+}

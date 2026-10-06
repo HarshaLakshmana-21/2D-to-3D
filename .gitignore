@@ -1,0 +1,10 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# offline install bundle (make_offline_bundle.py)
+wheels/
+
+# failed first run (wrong scale, border not cropped) - see docs/pipeline_walkthrough.html
+output/draw-2d-house-plan-floor-plan-in-autocad_*
