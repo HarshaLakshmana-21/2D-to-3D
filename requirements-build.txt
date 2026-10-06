@@ -1,0 +1,2 @@
+# Packaging the desktop app into an executable (packaging/build_*.bat|sh)
+pyinstaller>=6.10

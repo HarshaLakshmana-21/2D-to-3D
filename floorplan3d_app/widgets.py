@@ -1,0 +1,155 @@
+"""Reusable widgets: image drop zone, zoom/pan image viewer, stat card, warning banner."""
+import os
+
+from PySide6.QtCore import QRectF, Qt, Signal
+from PySide6.QtGui import QImageReader, QPainter, QPixmap
+from PySide6.QtWidgets import (QFrame, QGraphicsPixmapItem, QGraphicsScene, QGraphicsView, QHBoxLayout,
+                               QLabel, QSizePolicy, QVBoxLayout)
+
+from .theme import C, icon
+
+IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff", ".webp")
+
+
+def is_image(path):
+    return bool(path) and path.lower().endswith(IMAGE_EXTS) and os.path.isfile(path)
+
+
+def _restyle(w):
+    w.style().unpolish(w); w.style().polish(w)
+
+
+class DropZone(QFrame):
+    """Click or drop an image here. Shows a thumbnail once loaded."""
+    fileSelected = Signal(str)
+    clicked = Signal()
+
+    def __init__(self):
+        super().__init__()
+        self.setObjectName("dropZone")
+        self.setAcceptDrops(True)
+        self.setCursor(Qt.PointingHandCursor)
+        self.setMinimumHeight(190)
+        lay = QVBoxLayout(self); lay.setContentsMargins(14, 14, 14, 14); lay.setSpacing(6)
+        self.thumb = QLabel(); self.thumb.setAlignment(Qt.AlignCenter)
+        self.thumb.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Expanding)
+        self.title = QLabel("Drop a floor plan here"); self.title.setAlignment(Qt.AlignCenter)
+        self.title.setStyleSheet("font-weight:600; font-size:14px;")
+        self.sub = QLabel("or click to browse · PNG, JPG, BMP, TIFF, WebP"); self.sub.setObjectName("muted")
+        self.sub.setAlignment(Qt.AlignCenter); self.sub.setWordWrap(True)
+        lay.addWidget(self.thumb, 1); lay.addWidget(self.title); lay.addWidget(self.sub)
+        self._pix = None
+        self._show_placeholder()
+
+    def _show_placeholder(self):
+        self.thumb.setPixmap(icon("upload", C["accent_hi"], 40).pixmap(40, 40))
+
+    def set_image(self, path):
+        pm = QPixmap(path)
+        if pm.isNull():
+            return False
+        self._pix = pm
+        self._fit_thumb()
+        size = QImageReader(path).size()
+        self.title.setText(os.path.basename(path))
+        self.sub.setText(f"{size.width()} × {size.height()} px · click to change")
+        self.setProperty("loaded", True); _restyle(self)
+        return True
+
+    def _fit_thumb(self):
+        if self._pix is not None:
+            w, h = max(40, self.thumb.width() - 4), max(40, self.thumb.height() - 4)
+            self.thumb.setPixmap(self._pix.scaled(w, h, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+
+    def resizeEvent(self, e):
+        super().resizeEvent(e); self._fit_thumb()
+
+    def mouseReleaseEvent(self, e):
+        if e.button() == Qt.LeftButton:
+            self.clicked.emit()
+
+    def dragEnterEvent(self, e):
+        urls = e.mimeData().urls()
+        if urls and is_image(urls[0].toLocalFile()):
+            e.acceptProposedAction(); self.setProperty("hover", True); _restyle(self)
+
+    def dragLeaveEvent(self, e):
+        self.setProperty("hover", False); _restyle(self)
+
+    def dropEvent(self, e):
+        self.setProperty("hover", False); _restyle(self)
+        self.fileSelected.emit(e.mimeData().urls()[0].toLocalFile())
+
+
+class ImageView(QGraphicsView):
+    """Image viewer: wheel to zoom around the cursor, drag to pan, double-click to fit."""
+
+    def __init__(self):
+        super().__init__()
+        self.setScene(QGraphicsScene(self))
+        self._item = QGraphicsPixmapItem(); self._item.setTransformationMode(Qt.SmoothTransformation)
+        self.scene().addItem(self._item)
+        self.setRenderHints(QPainter.Antialiasing | QPainter.SmoothPixmapTransform)
+        self.setDragMode(QGraphicsView.ScrollHandDrag)
+        self.setTransformationAnchor(QGraphicsView.AnchorUnderMouse)
+        self.setResizeAnchor(QGraphicsView.AnchorViewCenter)
+        self._fitted = True
+
+    def set_image(self, path):
+        pm = QPixmap(path)
+        self._item.setPixmap(pm)
+        self.scene().setSceneRect(QRectF(pm.rect()))
+        self.fit()
+        return not pm.isNull()
+
+    def fit(self):
+        if not self._item.pixmap().isNull():
+            self.fitInView(self._item, Qt.KeepAspectRatio)
+            self._fitted = True
+
+    def wheelEvent(self, e):
+        f = 1.2 if e.angleDelta().y() > 0 else 1 / 1.2
+        cur = self.transform().m11()
+        if 0.02 < cur * f < 20:
+            self.scale(f, f); self._fitted = False
+
+    def mouseDoubleClickEvent(self, e):
+        self.fit()
+
+    def resizeEvent(self, e):
+        super().resizeEvent(e)
+        if self._fitted:
+            self.fit()
+
+
+class StatCard(QFrame):
+    def __init__(self, label):
+        super().__init__()
+        self.setObjectName("stat")
+        lay = QVBoxLayout(self); lay.setContentsMargins(14, 10, 14, 10); lay.setSpacing(1)
+        self.value = QLabel("–"); self.value.setObjectName("statValue")
+        self.label = QLabel(label.upper()); self.label.setObjectName("statLabel")
+        self.sub = QLabel(""); self.sub.setObjectName("faint")
+        lay.addWidget(self.value); lay.addWidget(self.label); lay.addWidget(self.sub)
+        self.sub.hide()
+
+    def set(self, value, sub=None, color=None):
+        self.value.setText(str(value))
+        self.value.setStyleSheet(f"color:{color};" if color else "")
+        self.sub.setText(sub or ""); self.sub.setVisible(bool(sub))
+
+
+class Banner(QFrame):
+    """Amber warning strip shown above the results (e.g. estimated scale)."""
+
+    def __init__(self):
+        super().__init__()
+        self.setObjectName("banner")
+        lay = QHBoxLayout(self); lay.setContentsMargins(12, 9, 12, 9); lay.setSpacing(10)
+        ic = QLabel(); ic.setPixmap(icon("warn", C["warn"], 18).pixmap(18, 18))
+        self.text = QLabel(); self.text.setObjectName("bannerText"); self.text.setWordWrap(True)
+        lay.addWidget(ic, 0, Qt.AlignTop); lay.addWidget(self.text, 1)
+        self.hide()
+
+    def show_text(self, text):
+        self.text.setText(text); self.setVisible(bool(text))

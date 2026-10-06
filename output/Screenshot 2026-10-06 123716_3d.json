@@ -1,0 +1,2546 @@
+{
+  "schema": "floorplan3d/v1",
+  "generator": "floorplan3d 1.0.0",
+  "source_image": "Screenshot 2026-10-06 123716.png",
+  "units": {
+    "length": "m",
+    "area": "m2",
+    "note": "feet-inch strings provided for convenience"
+  },
+  "coordinate_system": {
+    "origin": "top-left corner of the building footprint",
+    "x": "right (plan) -> 3D +X",
+    "y": "down (plan) -> 3D +Z",
+    "up": "3D +Y (heights)"
+  },
+  "image": {
+    "width_px": 1025,
+    "height_px": 591,
+    "origin_px": [
+      73.0,
+      39.0
+    ]
+  },
+  "scale": {
+    "px_per_m_x": 12.9412,
+    "px_per_m_y": 12.9412,
+    "px_per_ft_x": 3.9445,
+    "px_per_ft_y": 3.9445,
+    "method": "estimated_from_door_widths (verify!)",
+    "annotations": []
+  },
+  "defaults": {
+    "wall_height_m": 2.75,
+    "door_height_m": 2.1,
+    "window_sill_m": 0.9,
+    "window_head_m": 2.1,
+    "floor_thickness_m": 0.05,
+    "fallback_px_per_m": null
+  },
+  "building": {
+    "width_m": 67.227,
+    "depth_m": 42.191,
+    "width_ft_in": "220' 7\"",
+    "depth_ft_in": "138' 5\"",
+    "floor_area_m2": 1969.46,
+    "wall_count": 64,
+    "door_count": 6,
+    "window_count": 21,
+    "room_count": 12
+  },
+  "walls": [
+    {
+      "id": "W1",
+      "start": [
+        47.445,
+        3.941
+      ],
+      "end": [
+        66.841,
+        3.941
+      ],
+      "length_m": 19.395,
+      "length_ft_in": "63' 8\"",
+      "thickness_m": 0.773,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": [
+        "N1"
+      ]
+    },
+    {
+      "id": "W2",
+      "start": [
+        16.382,
+        4.636
+      ],
+      "end": [
+        32.648,
+        4.636
+      ],
+      "length_m": 16.266,
+      "length_ft_in": "53' 4\"",
+      "thickness_m": 0.773,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": [
+        "N2",
+        "N3"
+      ]
+    },
+    {
+      "id": "W3",
+      "start": [
+        33.845,
+        7.148
+      ],
+      "end": [
+        47.445,
+        7.148
+      ],
+      "length_m": 13.6,
+      "length_ft_in": "44' 7\"",
+      "thickness_m": 0.85,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": [
+        "D1",
+        "N4"
+      ]
+    },
+    {
+      "id": "W4",
+      "start": [
+        0.734,
+        9.35
+      ],
+      "end": [
+        16.382,
+        9.35
+      ],
+      "length_m": 15.648,
+      "length_ft_in": "51' 4\"",
+      "thickness_m": 0.773,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": [
+        "N5",
+        "N6"
+      ]
+    },
+    {
+      "id": "W5",
+      "start": [
+        32.648,
+        15.57
+      ],
+      "end": [
+        33.845,
+        15.57
+      ],
+      "length_m": 1.198,
+      "length_ft_in": "3' 11\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W6",
+      "start": [
+        23.568,
+        19.357
+      ],
+      "end": [
+        32.648,
+        19.357
+      ],
+      "length_m": 9.08,
+      "length_ft_in": "29' 9\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W7",
+      "start": [
+        32.648,
+        19.357
+      ],
+      "end": [
+        33.034,
+        19.357
+      ],
+      "length_m": 0.386,
+      "length_ft_in": "1' 3\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W8",
+      "start": [
+        33.034,
+        19.357
+      ],
+      "end": [
+        36.434,
+        19.357
+      ],
+      "length_m": 3.4,
+      "length_ft_in": "11' 2\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W9",
+      "start": [
+        0.734,
+        22.37
+      ],
+      "end": [
+        9.041,
+        22.37
+      ],
+      "length_m": 8.307,
+      "length_ft_in": "27' 3\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": [
+        "N10"
+      ]
+    },
+    {
+      "id": "W10",
+      "start": [
+        41.766,
+        26.273
+      ],
+      "end": [
+        48.952,
+        26.273
+      ],
+      "length_m": 7.186,
+      "length_ft_in": "23' 7\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W11",
+      "start": [
+        48.952,
+        26.273
+      ],
+      "end": [
+        64.368,
+        26.273
+      ],
+      "length_m": 15.416,
+      "length_ft_in": "50' 7\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": [
+        "N11"
+      ]
+    },
+    {
+      "id": "W12",
+      "start": [
+        64.368,
+        26.273
+      ],
+      "end": [
+        66.841,
+        26.273
+      ],
+      "length_m": 2.473,
+      "length_ft_in": "8' 1\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W13",
+      "start": [
+        9.041,
+        26.466
+      ],
+      "end": [
+        11.475,
+        26.466
+      ],
+      "length_m": 2.434,
+      "length_ft_in": "8' 0\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W14",
+      "start": [
+        11.475,
+        26.466
+      ],
+      "end": [
+        16.382,
+        26.466
+      ],
+      "length_m": 4.907,
+      "length_ft_in": "16' 1\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": [
+        "N12"
+      ]
+    },
+    {
+      "id": "W15",
+      "start": [
+        16.382,
+        26.466
+      ],
+      "end": [
+        23.568,
+        26.466
+      ],
+      "length_m": 7.186,
+      "length_ft_in": "23' 7\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": [
+        "N13"
+      ]
+    },
+    {
+      "id": "W16",
+      "start": [
+        23.568,
+        26.466
+      ],
+      "end": [
+        33.034,
+        26.466
+      ],
+      "length_m": 9.466,
+      "length_ft_in": "31' 1\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W17",
+      "start": [
+        0.734,
+        29.132
+      ],
+      "end": [
+        2.357,
+        29.132
+      ],
+      "length_m": 1.623,
+      "length_ft_in": "5' 4\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W18",
+      "start": [
+        2.357,
+        29.132
+      ],
+      "end": [
+        9.041,
+        29.132
+      ],
+      "length_m": 6.684,
+      "length_ft_in": "21' 11\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W19",
+      "start": [
+        9.041,
+        31.798
+      ],
+      "end": [
+        11.475,
+        31.798
+      ],
+      "length_m": 2.434,
+      "length_ft_in": "8' 0\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W20",
+      "start": [
+        11.475,
+        31.798
+      ],
+      "end": [
+        16.73,
+        31.798
+      ],
+      "length_m": 5.255,
+      "length_ft_in": "17' 3\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": [
+        "N17"
+      ]
+    },
+    {
+      "id": "W21",
+      "start": [
+        16.73,
+        31.798
+      ],
+      "end": [
+        21.25,
+        31.798
+      ],
+      "length_m": 4.52,
+      "length_ft_in": "14' 10\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W22",
+      "start": [
+        0.734,
+        33.15
+      ],
+      "end": [
+        2.357,
+        33.15
+      ],
+      "length_m": 1.623,
+      "length_ft_in": "5' 4\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W23",
+      "start": [
+        41.766,
+        33.15
+      ],
+      "end": [
+        48.952,
+        33.15
+      ],
+      "length_m": 7.186,
+      "length_ft_in": "23' 7\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W24",
+      "start": [
+        35.391,
+        33.42
+      ],
+      "end": [
+        39.139,
+        33.42
+      ],
+      "length_m": 3.748,
+      "length_ft_in": "12' 4\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W25",
+      "start": [
+        39.139,
+        33.42
+      ],
+      "end": [
+        41.766,
+        33.42
+      ],
+      "length_m": 2.627,
+      "length_ft_in": "8' 7\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W26",
+      "start": [
+        31.991,
+        34.927
+      ],
+      "end": [
+        35.082,
+        34.927
+      ],
+      "length_m": 3.091,
+      "length_ft_in": "10' 2\"",
+      "thickness_m": 0.773,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W27",
+      "start": [
+        0.734,
+        40.22
+      ],
+      "end": [
+        16.73,
+        40.22
+      ],
+      "length_m": 15.995,
+      "length_ft_in": "52' 6\"",
+      "thickness_m": 1.468,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W28",
+      "start": [
+        16.73,
+        40.22
+      ],
+      "end": [
+        21.25,
+        40.22
+      ],
+      "length_m": 4.52,
+      "length_ft_in": "14' 10\"",
+      "thickness_m": 1.468,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": [
+        "D6"
+      ]
+    },
+    {
+      "id": "W29",
+      "start": [
+        21.25,
+        40.22
+      ],
+      "end": [
+        31.991,
+        40.22
+      ],
+      "length_m": 10.741,
+      "length_ft_in": "35' 3\"",
+      "thickness_m": 1.468,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": [
+        "N21"
+      ]
+    },
+    {
+      "id": "W30",
+      "start": [
+        35.082,
+        41.186
+      ],
+      "end": [
+        39.139,
+        41.186
+      ],
+      "length_m": 4.057,
+      "length_ft_in": "13' 4\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W31",
+      "start": [
+        39.139,
+        41.186
+      ],
+      "end": [
+        48.952,
+        41.186
+      ],
+      "length_m": 9.814,
+      "length_ft_in": "32' 2\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W32",
+      "start": [
+        48.952,
+        41.727
+      ],
+      "end": [
+        64.368,
+        41.727
+      ],
+      "length_m": 15.416,
+      "length_ft_in": "50' 7\"",
+      "thickness_m": 0.773,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W33",
+      "start": [
+        32.377,
+        41.805
+      ],
+      "end": [
+        35.082,
+        41.805
+      ],
+      "length_m": 2.705,
+      "length_ft_in": "8' 10\"",
+      "thickness_m": 0.773,
+      "height_m": 2.75,
+      "orientation": "horizontal",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W34",
+      "start": [
+        0.734,
+        9.35
+      ],
+      "end": [
+        0.734,
+        22.37
+      ],
+      "length_m": 13.02,
+      "length_ft_in": "42' 9\"",
+      "thickness_m": 1.159,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W35",
+      "start": [
+        0.734,
+        22.37
+      ],
+      "end": [
+        0.734,
+        29.132
+      ],
+      "length_m": 6.761,
+      "length_ft_in": "22' 2\"",
+      "thickness_m": 1.159,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W36",
+      "start": [
+        0.734,
+        29.132
+      ],
+      "end": [
+        0.734,
+        33.15
+      ],
+      "length_m": 4.018,
+      "length_ft_in": "13' 2\"",
+      "thickness_m": 1.159,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W37",
+      "start": [
+        0.734,
+        33.15
+      ],
+      "end": [
+        0.734,
+        40.22
+      ],
+      "length_m": 7.07,
+      "length_ft_in": "23' 2\"",
+      "thickness_m": 1.159,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W38",
+      "start": [
+        2.357,
+        29.132
+      ],
+      "end": [
+        2.357,
+        33.15
+      ],
+      "length_m": 4.018,
+      "length_ft_in": "13' 2\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W39",
+      "start": [
+        9.041,
+        22.37
+      ],
+      "end": [
+        9.041,
+        26.466
+      ],
+      "length_m": 4.095,
+      "length_ft_in": "13' 5\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W40",
+      "start": [
+        9.041,
+        26.466
+      ],
+      "end": [
+        9.041,
+        29.132
+      ],
+      "length_m": 2.666,
+      "length_ft_in": "8' 9\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W41",
+      "start": [
+        9.041,
+        29.132
+      ],
+      "end": [
+        9.041,
+        31.798
+      ],
+      "length_m": 2.666,
+      "length_ft_in": "8' 9\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W42",
+      "start": [
+        9.041,
+        31.798
+      ],
+      "end": [
+        9.041,
+        33.382
+      ],
+      "length_m": 1.584,
+      "length_ft_in": "5' 2\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W43",
+      "start": [
+        11.475,
+        26.466
+      ],
+      "end": [
+        11.475,
+        31.798
+      ],
+      "length_m": 5.332,
+      "length_ft_in": "17' 6\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": [
+        "D2",
+        "D3",
+        "N14"
+      ]
+    },
+    {
+      "id": "W44",
+      "start": [
+        16.382,
+        4.636
+      ],
+      "end": [
+        16.382,
+        9.35
+      ],
+      "length_m": 4.714,
+      "length_ft_in": "15' 6\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W45",
+      "start": [
+        16.382,
+        9.35
+      ],
+      "end": [
+        16.382,
+        26.466
+      ],
+      "length_m": 17.116,
+      "length_ft_in": "56' 2\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W46",
+      "start": [
+        16.73,
+        31.798
+      ],
+      "end": [
+        16.73,
+        40.22
+      ],
+      "length_m": 8.423,
+      "length_ft_in": "27' 8\"",
+      "thickness_m": 0.927,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W47",
+      "start": [
+        21.25,
+        31.798
+      ],
+      "end": [
+        21.25,
+        34.541
+      ],
+      "length_m": 2.743,
+      "length_ft_in": "9' 0\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": [
+        "D4"
+      ]
+    },
+    {
+      "id": "W48",
+      "start": [
+        21.25,
+        40.22
+      ],
+      "end": [
+        21.25,
+        40.22
+      ],
+      "length_m": 0.0,
+      "length_ft_in": "0' 0\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W49",
+      "start": [
+        23.568,
+        19.357
+      ],
+      "end": [
+        23.568,
+        26.466
+      ],
+      "length_m": 7.109,
+      "length_ft_in": "23' 4\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": [
+        "N9"
+      ]
+    },
+    {
+      "id": "W50",
+      "start": [
+        31.991,
+        34.927
+      ],
+      "end": [
+        31.991,
+        40.22
+      ],
+      "length_m": 5.293,
+      "length_ft_in": "17' 4\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": [
+        "N19"
+      ]
+    },
+    {
+      "id": "W51",
+      "start": [
+        32.648,
+        4.636
+      ],
+      "end": [
+        32.648,
+        6.723
+      ],
+      "length_m": 2.086,
+      "length_ft_in": "6' 10\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W52",
+      "start": [
+        32.648,
+        7.495
+      ],
+      "end": [
+        32.648,
+        15.57
+      ],
+      "length_m": 8.075,
+      "length_ft_in": "26' 6\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W53",
+      "start": [
+        32.648,
+        15.57
+      ],
+      "end": [
+        32.648,
+        19.357
+      ],
+      "length_m": 3.786,
+      "length_ft_in": "12' 5\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W54",
+      "start": [
+        33.034,
+        19.357
+      ],
+      "end": [
+        33.034,
+        26.466
+      ],
+      "length_m": 7.109,
+      "length_ft_in": "23' 4\"",
+      "thickness_m": 1.391,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W55",
+      "start": [
+        33.845,
+        7.148
+      ],
+      "end": [
+        33.845,
+        15.57
+      ],
+      "length_m": 8.423,
+      "length_ft_in": "27' 8\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W56",
+      "start": [
+        35.082,
+        34.927
+      ],
+      "end": [
+        35.082,
+        41.186
+      ],
+      "length_m": 6.259,
+      "length_ft_in": "20' 6\"",
+      "thickness_m": 0.541,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W57",
+      "start": [
+        36.434,
+        19.357
+      ],
+      "end": [
+        36.434,
+        23.955
+      ],
+      "length_m": 4.598,
+      "length_ft_in": "15' 1\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": [
+        "N7"
+      ]
+    },
+    {
+      "id": "W58",
+      "start": [
+        39.139,
+        33.42
+      ],
+      "end": [
+        39.139,
+        41.186
+      ],
+      "length_m": 7.766,
+      "length_ft_in": "25' 6\"",
+      "thickness_m": 0.386,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": [
+        "D5"
+      ]
+    },
+    {
+      "id": "W59",
+      "start": [
+        41.766,
+        26.273
+      ],
+      "end": [
+        41.766,
+        33.15
+      ],
+      "length_m": 6.877,
+      "length_ft_in": "22' 7\"",
+      "thickness_m": 0.618,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": []
+    },
+    {
+      "id": "W60",
+      "start": [
+        47.445,
+        3.941
+      ],
+      "end": [
+        47.445,
+        7.148
+      ],
+      "length_m": 3.207,
+      "length_ft_in": "10' 6\"",
+      "thickness_m": 0.773,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": []
+    },
+    {
+      "id": "W61",
+      "start": [
+        48.952,
+        26.273
+      ],
+      "end": [
+        48.952,
+        33.15
+      ],
+      "length_m": 6.877,
+      "length_ft_in": "22' 7\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": [
+        "N16"
+      ]
+    },
+    {
+      "id": "W62",
+      "start": [
+        48.952,
+        33.15
+      ],
+      "end": [
+        48.952,
+        41.186
+      ],
+      "length_m": 8.036,
+      "length_ft_in": "26' 4\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "interior",
+      "openings": [
+        "N18"
+      ]
+    },
+    {
+      "id": "W63",
+      "start": [
+        64.368,
+        26.273
+      ],
+      "end": [
+        64.368,
+        41.727
+      ],
+      "length_m": 15.455,
+      "length_ft_in": "50' 8\"",
+      "thickness_m": 0.773,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": [
+        "N15",
+        "N20"
+      ]
+    },
+    {
+      "id": "W64",
+      "start": [
+        66.841,
+        3.941
+      ],
+      "end": [
+        66.841,
+        26.273
+      ],
+      "length_m": 22.332,
+      "length_ft_in": "73' 3\"",
+      "thickness_m": 0.695,
+      "height_m": 2.75,
+      "orientation": "vertical",
+      "type": "exterior",
+      "openings": [
+        "N8"
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "id": "D1",
+      "type": "door",
+      "wall_id": "W3",
+      "center": [
+        45.9,
+        7.109
+      ],
+      "width_m": 0.773,
+      "width_ft_in": "2' 6\"",
+      "height_m": 2.1,
+      "sill_height_m": 0.0,
+      "orientation": "horizontal",
+      "inferred_from_wall_gap": false,
+      "offset_from_wall_start_m": 11.669,
+      "connects": [
+        "R1",
+        "R2"
+      ]
+    },
+    {
+      "id": "D2",
+      "type": "door",
+      "wall_id": "W43",
+      "center": [
+        11.398,
+        28.05
+      ],
+      "width_m": 0.309,
+      "width_ft_in": "1' 0\"",
+      "height_m": 2.1,
+      "sill_height_m": 0.0,
+      "orientation": "vertical",
+      "inferred_from_wall_gap": false,
+      "offset_from_wall_start_m": 1.429,
+      "connects": [
+        "R2",
+        "R9"
+      ]
+    },
+    {
+      "id": "D3",
+      "type": "door",
+      "wall_id": "W43",
+      "center": [
+        11.436,
+        28.63
+      ],
+      "width_m": 0.541,
+      "width_ft_in": "1' 9\"",
+      "height_m": 2.1,
+      "sill_height_m": 0.0,
+      "orientation": "vertical",
+      "inferred_from_wall_gap": false,
+      "offset_from_wall_start_m": 1.893,
+      "connects": [
+        "R2",
+        "R9"
+      ]
+    },
+    {
+      "id": "D4",
+      "type": "door",
+      "wall_id": "W47",
+      "center": [
+        21.289,
+        33.845
+      ],
+      "width_m": 1.391,
+      "width_ft_in": "4' 7\"",
+      "height_m": 2.1,
+      "sill_height_m": 0.0,
+      "orientation": "vertical",
+      "inferred_from_wall_gap": false,
+      "offset_from_wall_start_m": 1.352,
+      "connects": [
+        "R2",
+        "exterior"
+      ]
+    },
+    {
+      "id": "D5",
+      "type": "door",
+      "wall_id": "W58",
+      "center": [
+        39.216,
+        36.975
+      ],
+      "width_m": 6.105,
+      "width_ft_in": "20' 0\"",
+      "height_m": 2.1,
+      "sill_height_m": 0.0,
+      "orientation": "vertical",
+      "inferred_from_wall_gap": false,
+      "offset_from_wall_start_m": 0.503,
+      "connects": [
+        "R2",
+        "R12"
+      ]
+    },
+    {
+      "id": "D6",
+      "type": "door",
+      "wall_id": "W28",
+      "center": [
+        21.289,
+        39.564
+      ],
+      "width_m": 0.541,
+      "width_ft_in": "1' 9\"",
+      "height_m": 2.1,
+      "sill_height_m": 0.0,
+      "orientation": "horizontal",
+      "inferred_from_wall_gap": false,
+      "offset_from_wall_start_m": 4.288,
+      "connects": [
+        "R2",
+        "exterior"
+      ]
+    },
+    {
+      "id": "N1",
+      "type": "window",
+      "wall_id": "W1",
+      "center": [
+        51.502,
+        3.941
+      ],
+      "width_m": 3.941,
+      "width_ft_in": "12' 11\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 2.087
+    },
+    {
+      "id": "N2",
+      "type": "window",
+      "wall_id": "W2",
+      "center": [
+        21.327,
+        4.636
+      ],
+      "width_m": 3.864,
+      "width_ft_in": "12' 8\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 3.013
+    },
+    {
+      "id": "N3",
+      "type": "window",
+      "wall_id": "W2",
+      "center": [
+        27.007,
+        4.636
+      ],
+      "width_m": 3.941,
+      "width_ft_in": "12' 11\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 8.654
+    },
+    {
+      "id": "N4",
+      "type": "window",
+      "wall_id": "W3",
+      "center": [
+        41.998,
+        7.148
+      ],
+      "width_m": 8.577,
+      "width_ft_in": "28' 2\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 3.864
+    },
+    {
+      "id": "N5",
+      "type": "window",
+      "wall_id": "W4",
+      "center": [
+        4.945,
+        9.35
+      ],
+      "width_m": 3.864,
+      "width_ft_in": "12' 8\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 2.28
+    },
+    {
+      "id": "N6",
+      "type": "window",
+      "wall_id": "W4",
+      "center": [
+        10.548,
+        9.35
+      ],
+      "width_m": 3.941,
+      "width_ft_in": "12' 11\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 7.843
+    },
+    {
+      "id": "N7",
+      "type": "window",
+      "wall_id": "W57",
+      "center": [
+        36.434,
+        21.405
+      ],
+      "width_m": 2.936,
+      "width_ft_in": "9' 8\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 0.579
+    },
+    {
+      "id": "N8",
+      "type": "window",
+      "wall_id": "W64",
+      "center": [
+        66.841,
+        22.023
+      ],
+      "width_m": 4.018,
+      "width_ft_in": "13' 2\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 16.073
+    },
+    {
+      "id": "N9",
+      "type": "window",
+      "wall_id": "W49",
+      "center": [
+        23.568,
+        22.216
+      ],
+      "width_m": 3.632,
+      "width_ft_in": "11' 11\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 1.043
+    },
+    {
+      "id": "N10",
+      "type": "window",
+      "wall_id": "W9",
+      "center": [
+        6.684,
+        22.37
+      ],
+      "width_m": 3.632,
+      "width_ft_in": "11' 11\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 4.134
+    },
+    {
+      "id": "N11",
+      "type": "window",
+      "wall_id": "W11",
+      "center": [
+        51.734,
+        26.273
+      ],
+      "width_m": 3.786,
+      "width_ft_in": "12' 5\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 0.889
+    },
+    {
+      "id": "N12",
+      "type": "window",
+      "wall_id": "W14",
+      "center": [
+        14.064,
+        26.543
+      ],
+      "width_m": 3.555,
+      "width_ft_in": "11' 8\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 0.811
+    },
+    {
+      "id": "N13",
+      "type": "window",
+      "wall_id": "W15",
+      "center": [
+        18.932,
+        26.543
+      ],
+      "width_m": 3.555,
+      "width_ft_in": "11' 8\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 0.773
+    },
+    {
+      "id": "N14",
+      "type": "window",
+      "wall_id": "W43",
+      "center": [
+        11.475,
+        29.093
+      ],
+      "width_m": 2.55,
+      "width_ft_in": "8' 4\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 1.352
+    },
+    {
+      "id": "N15",
+      "type": "window",
+      "wall_id": "W63",
+      "center": [
+        64.368,
+        30.252
+      ],
+      "width_m": 3.941,
+      "width_ft_in": "12' 11\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 2.009
+    },
+    {
+      "id": "N16",
+      "type": "window",
+      "wall_id": "W61",
+      "center": [
+        48.952,
+        30.677
+      ],
+      "width_m": 3.555,
+      "width_ft_in": "11' 8\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 2.627
+    },
+    {
+      "id": "N17",
+      "type": "window",
+      "wall_id": "W20",
+      "center": [
+        14.102,
+        31.836
+      ],
+      "width_m": 3.632,
+      "width_ft_in": "11' 11\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 0.811
+    },
+    {
+      "id": "N18",
+      "type": "window",
+      "wall_id": "W62",
+      "center": [
+        48.952,
+        35.545
+      ],
+      "width_m": 3.555,
+      "width_ft_in": "11' 8\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 0.618
+    },
+    {
+      "id": "N19",
+      "type": "window",
+      "wall_id": "W50",
+      "center": [
+        32.03,
+        37.98
+      ],
+      "width_m": 3.168,
+      "width_ft_in": "10' 5\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 1.468
+    },
+    {
+      "id": "N20",
+      "type": "window",
+      "wall_id": "W63",
+      "center": [
+        64.368,
+        38.52
+      ],
+      "width_m": 3.941,
+      "width_ft_in": "12' 11\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "vertical",
+      "offset_from_wall_start_m": 10.277
+    },
+    {
+      "id": "N21",
+      "type": "window",
+      "wall_id": "W29",
+      "center": [
+        25.539,
+        40.607
+      ],
+      "width_m": 3.786,
+      "width_ft_in": "12' 5\"",
+      "height_m": 1.2,
+      "sill_height_m": 0.9,
+      "orientation": "horizontal",
+      "offset_from_wall_start_m": 2.395
+    }
+  ],
+  "rooms": [
+    {
+      "id": "R1",
+      "name": "BALCONY",
+      "type": "balcony",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          32.802,
+          0.773
+        ],
+        [
+          32.802,
+          4.559
+        ],
+        [
+          33.15,
+          4.636
+        ],
+        [
+          33.15,
+          6.645
+        ],
+        [
+          46.364,
+          6.645
+        ],
+        [
+          46.789,
+          6.259
+        ],
+        [
+          46.789,
+          1.7
+        ],
+        [
+          45.977,
+          0.155
+        ],
+        [
+          33.382,
+          0.155
+        ]
+      ],
+      "area_m2": 92.07,
+      "area_ft2": 991.0,
+      "width_m": 13.987,
+      "depth_m": 6.49,
+      "width_ft_in": "45' 11\"",
+      "depth_ft_in": "21' 4\"",
+      "perimeter_m": 39.686,
+      "centroid": [
+        39.813,
+        3.362
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": [
+        "D1"
+      ]
+    },
+    {
+      "id": "R2",
+      "name": "LAUNDRY",
+      "type": "storage",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          66.455,
+          4.327
+        ],
+        [
+          47.986,
+          4.327
+        ],
+        [
+          47.986,
+          7.109
+        ],
+        [
+          47.445,
+          7.573
+        ],
+        [
+          34.232,
+          7.573
+        ],
+        [
+          34.232,
+          15.532
+        ],
+        [
+          32.995,
+          15.918
+        ],
+        [
+          32.995,
+          18.855
+        ],
+        [
+          36.473,
+          18.855
+        ],
+        [
+          36.859,
+          19.318
+        ],
+        [
+          36.859,
+          23.839
+        ],
+        [
+          36.048,
+          23.839
+        ],
+        [
+          36.048,
+          19.782
+        ],
+        [
+          33.73,
+          19.782
+        ],
+        [
+          33.73,
+          26.582
+        ],
+        [
+          32.995,
+          26.93
+        ],
+        [
+          11.9,
+          26.93
+        ],
+        [
+          11.9,
+          31.45
+        ],
+        [
+          21.25,
+          31.45
+        ],
+        [
+          21.52,
+          31.836
+        ],
+        [
+          21.52,
+          34.58
+        ],
+        [
+          20.864,
+          34.58
+        ],
+        [
+          20.864,
+          32.223
+        ],
+        [
+          17.232,
+          32.223
+        ],
+        [
+          17.232,
+          39.486
+        ],
+        [
+          31.527,
+          39.486
+        ],
+        [
+          31.527,
+          34.927
+        ],
+        [
+          31.914,
+          34.464
+        ],
+        [
+          35.082,
+          34.464
+        ],
+        [
+          35.468,
+          34.927
+        ],
+        [
+          35.468,
+          40.8
+        ],
+        [
+          38.868,
+          40.8
+        ],
+        [
+          38.868,
+          34.077
+        ],
+        [
+          35.43,
+          34.077
+        ],
+        [
+          35.43,
+          32.957
+        ],
+        [
+          41.341,
+          32.957
+        ],
+        [
+          41.341,
+          27.2
+        ],
+        [
+          41.805,
+          25.809
+        ],
+        [
+          66.455,
+          25.809
+        ]
+      ],
+      "area_m2": 951.77,
+      "area_ft2": 10244.7,
+      "width_m": 54.555,
+      "depth_m": 36.473,
+      "width_ft_in": "179' 0\"",
+      "depth_ft_in": "119' 8\"",
+      "perimeter_m": 225.906,
+      "centroid": [
+        43.576,
+        20.952
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6"
+      ]
+    },
+    {
+      "id": "R3",
+      "name": "BEDROOM",
+      "type": "bedroom",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          32.261,
+          5.1
+        ],
+        [
+          16.807,
+          5.1
+        ],
+        [
+          16.807,
+          26.118
+        ],
+        [
+          23.105,
+          26.118
+        ],
+        [
+          23.105,
+          19.395
+        ],
+        [
+          23.568,
+          18.932
+        ],
+        [
+          32.261,
+          18.932
+        ]
+      ],
+      "area_m2": 260.61,
+      "area_ft2": 2805.2,
+      "width_m": 15.454,
+      "depth_m": 21.018,
+      "width_ft_in": "50' 8\"",
+      "depth_ft_in": "68' 11\"",
+      "perimeter_m": 72.673,
+      "centroid": [
+        23.73,
+        13.87
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": []
+    },
+    {
+      "id": "R4",
+      "name": "BEDROOM",
+      "type": "bedroom",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          1.391,
+          9.736
+        ],
+        [
+          1.391,
+          22.023
+        ],
+        [
+          9.118,
+          22.023
+        ],
+        [
+          9.427,
+          22.409
+        ],
+        [
+          9.427,
+          26.118
+        ],
+        [
+          15.995,
+          26.118
+        ],
+        [
+          15.995,
+          9.736
+        ]
+      ],
+      "area_m2": 206.72,
+      "area_ft2": 2225.2,
+      "width_m": 14.604,
+      "depth_m": 16.382,
+      "width_ft_in": "47' 11\"",
+      "depth_ft_in": "53' 9\"",
+      "perimeter_m": 61.771,
+      "centroid": [
+        9.217,
+        16.96
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": []
+    },
+    {
+      "id": "R5",
+      "name": "CLOSET",
+      "type": "storage",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          32.3,
+          19.859
+        ],
+        [
+          23.955,
+          19.859
+        ],
+        [
+          23.955,
+          26.118
+        ],
+        [
+          32.3,
+          26.118
+        ]
+      ],
+      "area_m2": 52.33,
+      "area_ft2": 563.3,
+      "width_m": 8.345,
+      "depth_m": 6.259,
+      "width_ft_in": "27' 5\"",
+      "depth_ft_in": "20' 6\"",
+      "perimeter_m": 29.208,
+      "centroid": [
+        28.132,
+        22.983
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": []
+    },
+    {
+      "id": "R6",
+      "name": "CLOSET",
+      "type": "storage",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          1.391,
+          22.718
+        ],
+        [
+          1.391,
+          28.823
+        ],
+        [
+          8.732,
+          28.823
+        ],
+        [
+          8.732,
+          22.718
+        ]
+      ],
+      "area_m2": 44.81,
+      "area_ft2": 482.4,
+      "width_m": 7.341,
+      "depth_m": 6.105,
+      "width_ft_in": "24' 1\"",
+      "depth_ft_in": "20' 0\"",
+      "perimeter_m": 26.892,
+      "centroid": [
+        5.061,
+        25.77
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": []
+    },
+    {
+      "id": "R7",
+      "name": "Bathroom",
+      "type": "bathroom",
+      "label_source": "segmentation_model",
+      "confidence": 1.0,
+      "polygon": [
+        [
+          42.191,
+          26.659
+        ],
+        [
+          42.191,
+          32.841
+        ],
+        [
+          48.566,
+          32.841
+        ],
+        [
+          48.566,
+          26.659
+        ]
+      ],
+      "area_m2": 40.42,
+      "area_ft2": 435.1,
+      "width_m": 6.375,
+      "depth_m": 6.182,
+      "width_ft_in": "20' 11\"",
+      "depth_ft_in": "20' 3\"",
+      "perimeter_m": 25.114,
+      "centroid": [
+        45.372,
+        29.727
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": []
+    },
+    {
+      "id": "R8",
+      "name": "BEDROOM",
+      "type": "bedroom",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          49.3,
+          26.62
+        ],
+        [
+          49.3,
+          41.341
+        ],
+        [
+          63.905,
+          41.341
+        ],
+        [
+          63.905,
+          26.62
+        ]
+      ],
+      "area_m2": 215.36,
+      "area_ft2": 2318.2,
+      "width_m": 14.605,
+      "depth_m": 14.721,
+      "width_ft_in": "47' 11\"",
+      "depth_ft_in": "48' 4\"",
+      "perimeter_m": 58.652,
+      "centroid": [
+        56.606,
+        33.968
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": []
+    },
+    {
+      "id": "R9",
+      "name": "Bathroom",
+      "type": "bathroom",
+      "label_source": "segmentation_model",
+      "confidence": 1.0,
+      "polygon": [
+        [
+          9.35,
+          26.814
+        ],
+        [
+          9.35,
+          31.45
+        ],
+        [
+          11.05,
+          31.45
+        ],
+        [
+          11.05,
+          26.814
+        ]
+      ],
+      "area_m2": 7.88,
+      "area_ft2": 84.8,
+      "width_m": 1.7,
+      "depth_m": 4.636,
+      "width_ft_in": "5' 7\"",
+      "depth_ft_in": "15' 3\"",
+      "perimeter_m": 12.672,
+      "centroid": [
+        10.2,
+        29.132
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": [
+        "D2",
+        "D3"
+      ]
+    },
+    {
+      "id": "R10",
+      "name": "Bathroom",
+      "type": "bathroom",
+      "label_source": "segmentation_model",
+      "confidence": 1.0,
+      "polygon": [
+        [
+          1.391,
+          29.518
+        ],
+        [
+          1.391,
+          32.841
+        ],
+        [
+          2.086,
+          32.841
+        ],
+        [
+          2.086,
+          29.518
+        ]
+      ],
+      "area_m2": 2.31,
+      "area_ft2": 24.9,
+      "width_m": 0.695,
+      "depth_m": 3.323,
+      "width_ft_in": "2' 3\"",
+      "depth_ft_in": "10' 11\"",
+      "perimeter_m": 8.036,
+      "centroid": [
+        1.739,
+        31.18
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": []
+    },
+    {
+      "id": "R11",
+      "name": "BATH",
+      "type": "bathroom",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          2.627,
+          29.518
+        ],
+        [
+          2.627,
+          33.15
+        ],
+        [
+          1.391,
+          33.459
+        ],
+        [
+          1.391,
+          39.486
+        ],
+        [
+          16.227,
+          39.486
+        ],
+        [
+          16.227,
+          32.145
+        ],
+        [
+          9.466,
+          32.145
+        ],
+        [
+          9.466,
+          33.343
+        ],
+        [
+          8.77,
+          33.343
+        ],
+        [
+          8.77,
+          29.518
+        ]
+      ],
+      "area_m2": 122.43,
+      "area_ft2": 1317.8,
+      "width_m": 14.836,
+      "depth_m": 9.968,
+      "width_ft_in": "48' 8\"",
+      "depth_ft_in": "32' 8\"",
+      "perimeter_m": 51.733,
+      "centroid": [
+        8.48,
+        35.226
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": []
+    },
+    {
+      "id": "R12",
+      "name": "BATH",
+      "type": "bathroom",
+      "label_source": "ocr_label",
+      "confidence": 0.95,
+      "polygon": [
+        [
+          39.486,
+          33.691
+        ],
+        [
+          39.486,
+          40.684
+        ],
+        [
+          48.605,
+          40.684
+        ],
+        [
+          48.605,
+          33.691
+        ]
+      ],
+      "area_m2": 64.82,
+      "area_ft2": 697.7,
+      "width_m": 9.119,
+      "depth_m": 6.993,
+      "width_ft_in": "29' 11\"",
+      "depth_ft_in": "22' 11\"",
+      "perimeter_m": 32.224,
+      "centroid": [
+        44.041,
+        37.143
+      ],
+      "floor_elevation_m": 0.0,
+      "ceiling_height_m": 2.75,
+      "doors": [
+        "D5"
+      ]
+    }
+  ],
+  "texts": [
+    {
+      "text": "BEDROOM",
+      "score": 0.87,
+      "vertical": false,
+      "center_px": [
+        393.5,
+        193.2
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "WALK-IN",
+      "score": 0.87,
+      "vertical": false,
+      "center_px": [
+        662.0,
+        409.8
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "BALCONY",
+      "score": 0.85,
+      "vertical": false,
+      "center_px": [
+        569.5,
+        78.2
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "LAUNDRY",
+      "score": 0.85,
+      "vertical": false,
+      "center_px": [
+        339.0,
+        502.5
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "CLOSET",
+      "score": 0.85,
+      "vertical": false,
+      "center_px": [
+        124.2,
+        383.8
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "CLOSET",
+      "score": 0.83,
+      "vertical": false,
+      "center_px": [
+        506.8,
+        523.0
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "CLOSET",
+      "score": 0.82,
+      "vertical": false,
+      "center_px": [
+        449.8,
+        336.0
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "BEDROOM",
+      "score": 0.82,
+      "vertical": false,
+      "center_px": [
+        184.2,
+        245.8
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "BATH",
+      "score": 0.8,
+      "vertical": false,
+      "center_px": [
+        183.5,
+        490.0
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "KITCHEN",
+      "score": 0.78,
+      "vertical": false,
+      "center_px": [
+        618.2,
+        156.5
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "BEDROOM",
+      "score": 0.78,
+      "vertical": false,
+      "center_px": [
+        808.2,
+        472.8
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "16'7\"×17'5\"",
+      "score": 0.77,
+      "vertical": false,
+      "center_px": [
+        812.0,
+        241.5
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "BATH",
+      "score": 0.77,
+      "vertical": false,
+      "center_px": [
+        628.0,
+        499.0
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "8'1\"×10'9\"",
+      "score": 0.73,
+      "vertical": false,
+      "center_px": [
+        429.5,
+        485.8
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "MECH",
+      "score": 0.71,
+      "vertical": false,
+      "center_px": [
+        585.0,
+        446.8
+      ],
+      "dimension_m": null
+    },
+    {
+      "text": "LESOTD",
+      "score": 0.52,
+      "vertical": false,
+      "center_px": [
+        209.0,
+        407.5
+      ],
+      "dimension_m": null
+    }
+  ],
+  "warning": "No readable dimension strings found - scale was estimated (estimated_from_door_widths (verify!)). Pass --scale-px-per-ft or --scale-px-per-m for exact measurements.",
+  "processing_seconds": 9.27
+}

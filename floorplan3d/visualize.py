@@ -58,13 +58,14 @@ def draw_detection(img_bgr, res, cls=None, scale=2):
         cv2.rectangle(img, (x * scale, y * scale), ((x + w) * scale, (y + h) * scale), col, -1)
         cv2.rectangle(img, (x * scale, y * scale), ((x + w) * scale, (y + h) * scale), (255, 255, 255), 1)
 
+    from .pipeline import ROOM_DISPLAY
     pil = Image.fromarray(img); dr = ImageDraw.Draw(pil)
     f1, f2, f3 = _font(15 * scale // 2, True), _font(12 * scale // 2), _font(10 * scale // 2, True)
+    # room labels only: category + size (walls / openings stay unlabelled to keep the image clean)
     for r in res["rooms"]:
         cx, cy = P(r["centroid"])
-        lines = [(r["name"], f1), (f"[{r['type']}]", f2),
-                 (f"{r['width_ft_in']} x {r['depth_ft_in']}", f2),
-                 (f"{r['area_ft2']:.0f} ft²  /  {r['area_m2']:.1f} m²", f2)]
+        lines = [(ROOM_DISPLAY.get(r["type"], r["type"].replace("_", " ").title()), f1),
+                 (f"{r['width_ft_in']} x {r['depth_ft_in']}", f2)]
         hs = [dr.textbbox((0, 0), t, font=f) for t, f in lines]
         tot = sum(b[3] - b[1] + 4 for b in hs)
         bw = max(b[2] - b[0] for b in hs) + 10
@@ -72,31 +73,6 @@ def draw_detection(img_bgr, res, cls=None, scale=2):
         dr.rounded_rectangle([cx - bw / 2, y - 4, cx + bw / 2, y + tot + 2], 6, fill=(255, 255, 255), outline=(90, 90, 90))
         for (t, f), b in zip(lines, hs):
             dr.text((cx - (b[2] - b[0]) / 2, y - b[1]), t, fill=(20, 20, 20), font=f); y += b[3] - b[1] + 4
-    for o in res["openings"]:
-        if "_px" not in o:
-            continue
-        x, y, w, h = o["_px"]["bbox"]
-        t = f"{o['id']} {o['width_ft_in']}"
-        col = DOOR if o["type"] == "door" else WINDOW
-        b = dr.textbbox((0, 0), t, font=f3)
-        tx = (x + w / 2) * scale - (b[2] - b[0]) / 2
-        ty = (y + h) * scale + 3 if o["orientation"] == "horizontal" else (y + h / 2) * scale - (b[3] - b[1]) / 2
-        if o["orientation"] == "vertical":
-            tx = (x + w) * scale + 4
-        dr.rectangle([tx - 2, ty - 1, tx + b[2] - b[0] + 2, ty + b[3] - b[1] + 3], fill=(255, 255, 255))
-        dr.text((tx, ty - b[1]), t, fill=col, font=f3)
-    for w in res["walls"]:
-        if w["length_m"] < 1.0:
-            continue
-        a, b = P(w["start"]), P(w["end"])
-        t = f"{w['id']}: {w['length_ft_in']}"
-        bb = dr.textbbox((0, 0), t, font=f3)
-        mx, my = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2
-        if w["orientation"] == "horizontal":
-            tx, ty = mx - (bb[2] - bb[0]) / 2, my - (bb[3] - bb[1]) - 8 * scale // 2 - 2
-        else:
-            tx, ty = mx + 6 * scale // 2, my - (bb[3] - bb[1]) / 2
-        dr.text((tx, ty - bb[1]), t, fill=(150, 20, 20), font=f3)
 
     # legend / info panel
     pw = 360 * scale // 2

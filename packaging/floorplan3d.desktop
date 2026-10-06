@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Floorplan3D
+Comment=Turn a 2D floor plan image into a measured 3D model
+# Edit the two paths below to where you extracted the Floorplan3D folder, then copy
+# this file to ~/.local/share/applications/ to get a menu entry.
+Exec=/opt/Floorplan3D/Floorplan3D %f
+Icon=/opt/Floorplan3D/floorplan3d.png
+Terminal=false
+Categories=Graphics;Engineering;
+MimeType=image/png;image/jpeg;image/bmp;image/tiff;image/webp;
